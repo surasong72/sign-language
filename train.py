@@ -20,8 +20,8 @@ classifier.add(Convolution2D(32, (3, 3), activation='relu'))
 classifier.add(MaxPooling2D(pool_size=(2, 2)))
 
 #Adding 3rd Concolution Layer
-#classifier.add(Convolution2D(64, 3,  3, activation = 'relu'))
-#classifier.add(MaxPooling2D(pool_size =(2,2)))
+classifier.add(Convolution2D(64, 3,  3, activation = 'relu'))
+classifier.add(MaxPooling2D(pool_size =(2,2)))
 
 # Flattening the layers
 classifier.add(Flatten())
@@ -37,7 +37,6 @@ classifier.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['
 
 # Step 2 - Preparing the train/test data and training the model
 
-# Code copied from - https://keras.io/preprocessing/image/
 from keras.preprocessing.image import ImageDataGenerator
 
 train_datagen = ImageDataGenerator(
